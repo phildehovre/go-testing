@@ -11,6 +11,15 @@ var lastWord = "go!"
 
 type DefaultSleeper struct{}
 
+type ConfigurableSleeper struct {
+	duration time.Duration
+	sleep    func(time.Duration)
+}
+
+func (s *ConfigurableSleeper) Sleep() {
+	s.sleep(s.duration)
+}
+
 func (s *DefaultSleeper) Sleep() {
 	time.Sleep(1 * time.Second)
 }
