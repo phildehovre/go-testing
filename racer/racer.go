@@ -18,6 +18,7 @@ func Racer(a, b string) (winner string) {
 // 	return time.Since(start)
 
 // }
+// Channel is useful in this case
 
 func ping(url string) chan struct{} {
 	ch := make(chan struct{})
