@@ -7,6 +7,10 @@ import (
 )
 
 type Store interface {
+	// Anything that implements the fetch method
+	// satisfies the Store interface
+	// Store takes in the request context,
+	// therefore propagating the pipeline
 	Fetch(ctx context.Context) (string, error)
 }
 
